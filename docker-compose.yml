@@ -1,0 +1,15 @@
+version: "3.8"
+services:
+  rust4u:
+    image: postgres:15
+    container_name: rust4u
+    environment:
+      - POSTGRES_USER=rust4u
+      - POSTGRES_PASSWORD=rust4u
+      - POSTGRES_DB=rust4u
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+volumes:
+  postgres_data:
