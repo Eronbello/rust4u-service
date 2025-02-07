@@ -6,5 +6,6 @@ pub async fn create_db_pool(database_url: &str) -> Result<Pool<Postgres>> {
     Ok(pool)
 }
 
+pub mod issue_repository_sql;
 pub mod project_repository_sql;
 pub mod user_repository_sql;

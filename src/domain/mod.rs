@@ -4,6 +4,7 @@ pub mod entities {
     pub mod user;
 }
 pub mod repositories {
+    pub mod issue_repository;
     pub mod project_repository;
     pub mod user_repository;
 }
