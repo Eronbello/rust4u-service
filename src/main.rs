@@ -1,16 +1,15 @@
 use dotenv::dotenv;
-use std::env;
-use tracing_subscriber;
 use rust4u_backend::api::create_routes;
 use rust4u_backend::infra::db::create_db_pool;
+use std::env;
+use tracing_subscriber;
 
 #[tokio::main]
 async fn main() -> anyhow::Result<()> {
     dotenv().ok();
     tracing_subscriber::fmt::init();
 
-    let database_url = env::var("DATABASE_URL")
-        .expect("DATABASE_URL must be set in .env");
+    let database_url = env::var("DATABASE_URL").expect("DATABASE_URL must be set in .env");
 
     // Create DB pool
     let pool = create_db_pool(&database_url).await?;

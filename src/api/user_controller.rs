@@ -55,7 +55,6 @@ pub fn routes(pool: Pool<Postgres>) -> Router<Pool<Postgres>> {
         .route("/", post(register_user).get(list_users))
         .route("/login", post(login_user))
         .route("/:id", get(get_user).put(update_user).delete(delete_user))
-        // Attach the pool as the state
         .with_state(pool)
 }
 
